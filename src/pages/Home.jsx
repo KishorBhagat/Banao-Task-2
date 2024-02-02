@@ -22,8 +22,8 @@ function Home() {
                     setIsLoading(false);
                 }
             } catch (error) {
-                console.log(error, "hii there")
-                setIsLoading(false);
+                console.log(error)
+                // setIsLoading(false);
             }
         };
         fetchData();
