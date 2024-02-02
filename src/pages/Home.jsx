@@ -43,7 +43,7 @@ function Home() {
                                         return <UserListItem user={user} key={idx} open={open} setOpen={setOpen} selectedUser={selectedUser} setSelectedUser={setSelectedUser} show={show} setShow={setShow} />
                                     })
                                     :
-                                    <div>No data to show!</div>
+                                    <div className="mt-5 text-center" style={{fontSize: "20px"}}>No data to show!</div>
                             )
                             :
                             <div className="spinner text-center"><Spinner /></div>

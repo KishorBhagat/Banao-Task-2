@@ -11,14 +11,14 @@ function UserListItem({user, open, setOpen, selectedUser, setSelectedUser, show,
         setSelectedUser(user);
     }
   return (
-    <div className={`user-list-item d-flex rounded-2 p-3 gap-md-4 gap-2 ${selectedUser===user?"selected":""}`} onClick={handleClick}>
-        {/* {user.profile.firstName} {user.profile.lastName} */}
+    <div className={`user-list-item d-flex rounded-2 p-3 gap-md-4 gap-2`} onClick={handleClick}
+        style={{backgroundColor: `${selectedUser===user?"#b7b7b7":"#fff"}`}}
+    >
         <div className='avatar rounded-circle' style={{backgroundColor: "#e4e3e1"}}>
             {
                 avatar.includes("fakercloud")?
                 <div className='avatar-name w-100 h-100 d-flex align-items-center justify-content-center'>{firstName.charAt(0).toUpperCase()}{lastName.charAt(0).toUpperCase()}</div>
                 :
-                // <img src={avatar} alt="" />
                 <Image className="w-100 h-100" src={avatar} roundedCircle />
             }
         </div>
