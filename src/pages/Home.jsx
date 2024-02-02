@@ -10,12 +10,7 @@ function Home() {
     const [isLoading, setIsLoading] = useState(false);
     const [open, setOpen] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null)
-
     const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,30 +22,25 @@ function Home() {
                     setIsLoading(false);
                 }
             } catch (error) {
-                console.log(error)
-                // setIsLoading(false);
+                console.log(error, "hii there")
+                setIsLoading(false);
             }
         };
         fetchData();
     }, [])
 
-    // useEffect(() => {
-    //     console.log(selectedUser)
-    // }, [selectedUser])
-
     return (
         <div className="home">
-            {selectedUser && <UserDetailsModal selectedUser={selectedUser} setSelectedUser={setSelectedUser} show={show} setShow={setShow}/>}
+            {selectedUser && <UserDetailsModal selectedUser={selectedUser} setSelectedUser={setSelectedUser} show={show} setShow={setShow} />}
             <h2>Users</h2>
             <div className={`box d-flex ${open && "gap-4"}  flex-column-reverse flex-md-row`}>
-                <div className="users-list-container d-flex flex-column gap-4">
-                    {/* <button onClick={() => setOpen(!open)}>toggle</button> */}
+                <div className="users-list-container d-flex flex-column gap-2">
                     {
                         !isLoading ?
                             (
-                                users.length !== 0 ?
+                                users?.length !== 0 ?
                                     users?.map((user, idx) => {
-                                        return <UserListItem user={user} key={idx} open={open} setOpen={setOpen} selectedUser={selectedUser} setSelectedUser={setSelectedUser} show={show} setShow={setShow}/>
+                                        return <UserListItem user={user} key={idx} open={open} setOpen={setOpen} selectedUser={selectedUser} setSelectedUser={setSelectedUser} show={show} setShow={setShow} />
                                     })
                                     :
                                     <div>No data to show!</div>

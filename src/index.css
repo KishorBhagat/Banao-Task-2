@@ -1,6 +1,6 @@
 .home {
   /* height: 100vh; */
-  padding: 20px 100px;
+  padding: 20px 200px;
   background-color: #e3e6e6;
 }
 .home h2{
@@ -45,15 +45,20 @@
   cursor: pointer;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.user-list-item + .selected {
-  background-color: #8e8686;
-}
+/* .user-list-item + .selected {
+  background-color: #c2bfbf;
+} */
 .user-list-item .avatar{
   height: 100px;
   width: 100px;
 }
 .avatar .avatar-name {
   font-size: 40px;
+}
+
+.user-list-item .details .name{
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .user-details .name, .user-details-modal .name{
@@ -90,12 +95,31 @@
   transform: translateY(-50%);
 }
 
+@media (max-width: 1200px) {
+  .home {
+    padding: 20px 50px;
+  }
+}
+
 @media (max-width: 769px) {
   .home {
     padding: 20px 20px;
   }
   .box{
     height: fit-content;
+  }
+  .user-list-item .avatar{
+    height: 60px;
+    width: 60px;
+  }
+  .user-list-item .details .name{
+    font-size: 18px;
+  }
+  .user-list-item .details .job-title{
+    font-size: 14px;
+  }
+  .user-list-item .avatar .avatar-name {
+    font-size: 20px;
   }
   .user-details {
     width: 100%;

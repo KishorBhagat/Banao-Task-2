@@ -11,7 +11,7 @@ function UserListItem({user, open, setOpen, selectedUser, setSelectedUser, show,
         setSelectedUser(user);
     }
   return (
-    <div className={`user-list-item d-flex rounded-2 p-3 gap-4 ${selectedUser===user?"selected":""}`} onClick={handleClick}>
+    <div className={`user-list-item d-flex rounded-2 p-3 gap-md-4 gap-2 ${selectedUser===user?"selected":""}`} onClick={handleClick}>
         {/* {user.profile.firstName} {user.profile.lastName} */}
         <div className='avatar rounded-circle' style={{backgroundColor: "#e4e3e1"}}>
             {
@@ -23,7 +23,7 @@ function UserListItem({user, open, setOpen, selectedUser, setSelectedUser, show,
             }
         </div>
         <div className='details d-flex flex-column justify-content-center' style={{backgroundColor: ""}}>
-            <div className="name" style={{fontWeight: "700", fontSize: "20px"}}>{user.profile.firstName} {user.profile.lastName}</div>
+            <div className="name">{user.profile.firstName} {user.profile.lastName}</div>
             <div className="job-title">{jobTitle}</div>
         </div>
     </div>
